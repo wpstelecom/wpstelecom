@@ -572,10 +572,34 @@
     if (ogTitle) ogTitle.setAttribute('content', window.siteConfig.empresa + ' - Provedor de Internet');
     var ogDescription = document.getElementById('og-description');
     if (ogDescription && window.siteConfig.descricao) ogDescription.setAttribute('content', window.siteConfig.descricao);
+    var dominio = window.siteConfig.dominio ? window.siteConfig.dominio.replace(/\/$/, '') : window.location.origin;
     var ogImage = document.getElementById('og-image');
-    if (ogImage) ogImage.setAttribute('content', window.siteConfig.logo || 'assets/img/logo2.png');
+    if (ogImage) ogImage.setAttribute('content', dominio + '/' + (window.siteConfig.logo || 'assets/img/logo_wps.png'));
     var ogUrl = document.getElementById('og-url');
-    if (ogUrl) ogUrl.setAttribute('content', window.location.href);
+    if (ogUrl) ogUrl.setAttribute('content', dominio + '/');
+
+    // Canonical link tag update
+    var canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', dominio + '/');
+    }
+
+    // JSON-LD Schema Update
+    var jsonLdScript = document.querySelector('script[type="application/ld+json"]');
+    if (jsonLdScript) {
+      try {
+        var schemaData = JSON.parse(jsonLdScript.innerHTML);
+        schemaData.name = window.siteConfig.empresa;
+        schemaData.image = dominio + '/' + (window.siteConfig.logo || 'assets/img/logo_wps.png');
+        schemaData["@id"] = dominio + '/';
+        schemaData.url = dominio + '/';
+        schemaData.telephone = '+' + window.siteConfig.whatsapp;
+        jsonLdScript.innerHTML = JSON.stringify(schemaData, null, 2);
+      } catch (e) {
+        console.error("Erro ao atualizar JSON-LD", e);
+      }
+    }
+
     // Logo src e alt
     var logoEmpresa = document.getElementById('logo-empresa');
     if (logoEmpresa) {
