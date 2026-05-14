@@ -1,0 +1,325 @@
+/* WPS Telecom Color Palette */
+:root {
+  /* Cores Primárias - Azul BB */
+    --cs-primary: #89CFF0;
+    /* Vermelho Principal (Accent) */
+    --cs-accent: #D32F2F;
+    /* Azul BB mais escuro para hover */
+    --cs-dark-orange: #5CADD6;
+
+  /* Tons Adicionais */
+    --cs-light-orange: #AEE1F9;
+    /* Vermelho Brilhante */
+    --cs-bright-orange: #F44336;
+
+  /* Neutros */
+  --cs-secondary: #0F172A;
+  /* Azul Muito Escuro para fundos como Footer e Hero */
+  --cs-white: #FFFFFF;
+  /* Branco */
+  --cs-gray: #666666;
+  --cs-heading: #111111;
+  --cs-body: #666666;
+}
+
+/* Base Styles Overrides */
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  color: var(--cs-body);
+  background-color: #f3f5f2;
+}
+
+.cs_orange_color {
+  color: var(--cs-accent) !important;
+}
+
+.cs_orange_bg {
+  background-color: var(--cs-primary) !important;
+}
+
+.cs_accent_bg {
+  background-color: var(--cs-primary) !important;
+}
+
+/* Updated orange color to use accent (red) for better contrast on light backgrounds */
+
+/* Gradient Text for "Win Telecom" feel if needed, or specific headings */
+.cs_text_gradient {
+  background: linear-gradient(to bottom, var(--cs-accent), var(--cs-dark-orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Botões - Cores Sólidas */
+.cs_btn.cs_style_1 {
+  background-color: var(--cs-primary) !important;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 113, 179, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  color: var(--cs-secondary) !important;
+  font-weight: 800 !important;
+}
+
+/* Desabilitar o pseudo-elemento de animação que causa problemas */
+.cs_btn.cs_style_1::before {
+  display: none !important;
+}
+
+.cs_btn.cs_style_1:hover {
+  transform: translateY(-2px);
+  background-color: var(--cs-secondary) !important;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.5);
+  color: var(--cs-white) !important;
+}
+
+/* Garantir ícones brancos nos botões */
+.cs_btn.cs_style_1 i {
+  margin-right: 8px;
+  color: inherit !important;
+}
+
+.cs_btn.cs_style_1:hover i {
+  color: inherit !important;
+}
+
+/* Texto do botão sempre de acordo com o contraste */
+.cs_btn.cs_style_1 .cs_btn_text {
+  color: inherit !important;
+}
+
+.cs_btn.cs_style_1:hover .cs_btn_text {
+  color: inherit !important;
+}
+
+/* Hero Section */
+.cs_site_branding {
+  max-width: 200px;
+  display: block;
+}
+
+.cs_site_branding img {
+  max-height: 100px !important;
+  width: auto !important;
+  max-width: 100%;
+}
+
+#logo-empresa {
+  /* filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff); */
+}
+
+#logo-footer {
+  /* filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff); */
+}
+
+/* Header Navigation Links - force white */
+.cs_nav_list a {
+  color: #FFFFFF !important;
+}
+
+.cs_nav_list a:hover {
+  color: var(--cs-accent) !important;
+}
+
+.cs_hero.cs_style_1 {
+  background-color: var(--cs-secondary);
+  /* Fallback black */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Hero content box - dark backdrop for contrast */
+.cs_hero_content {
+  background: transparent !important;
+  max-width: 790px;
+  margin: 0 auto; /* Centraliza se necessário */
+}
+
+.cs_hero_text {
+  background: rgba(0, 0, 0, 0.6) !important;
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  text-align: center; /* Centralizando o texto */
+}
+
+/* Ensure hero text is legible on dark background */
+h1.cs_hero_title {
+  color: var(--cs-white) !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  line-height: 1.2 !important;
+  margin-bottom: 15px !important;
+  font-size: 38px !important; /* Ajuste do h1 */
+}
+
+h3.cs_hero_title {
+  color: var(--cs-white) !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  line-height: 1.2 !important;
+  margin-bottom: 15px !important;
+  font-size: 28px !important; /* Ajuste do h3 em diante */
+}
+
+.cs_hero_subtitle {
+  color: #f0f0f0 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 15px !important;
+  font-size: 18px !important; /* Ajuste do p */
+}
+
+.cs_hero_text .cs_btn_group {
+  margin-top: 15px !important;
+  display: flex;
+  justify-content: center;
+}
+
+.cs_hero_text .cs_btn_group .cs_btn_text {
+  color: #FFFFFF !important;
+  font-weight: 900 !important; /* Mais visível */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para melhorar a leitura */
+  letter-spacing: 1px;
+}
+
+/* Section Headings */
+.cs_section_subtitle {
+  color: var(--cs-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Cards */
+.cs_card.cs_style_1 {
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  padding: 30px;
+}
+
+.cs_card.cs_style_1:hover {
+  border-color: var(--cs-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Benefit Cards Icons - Cor sólida para bom contraste */
+.cs_benefit_card .cs_card_icon i {
+  color: var(--cs-primary) !important;
+}
+
+/* Footer */
+.cs_footer {
+  background-color: var(--cs-secondary);
+}
+
+.cs_footer_widget_title {
+  color: var(--cs-white);
+  border-bottom: 2px solid var(--cs-primary);
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+/* Scroll Up - Cor sólida */
+.cs_scrollup {
+  background-color: var(--cs-primary);
+}
+
+/* Testimonials */
+.cs_testimonial {
+  background-color: #f9f9f9;
+}
+
+.cs_testimonial.cs_orange_bg {
+  /* Example for variety if needed */
+  background-color: var(--cs-primary);
+  color: var(--cs-white);
+}
+
+/* Preloader */
+.cs_preloader_in span {
+  background-color: var(--cs-primary);
+}
+
+/* City Selector Tabs */
+.cs_tab_btn {
+  background-color: transparent;
+  border: 2px solid var(--cs-primary);
+  color: var(--cs-primary);
+  font-weight: 700;
+  padding: 10px 25px;
+  border-radius: 50px;
+  margin: 0 10px 10px 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: 'Nunito Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cs_tab_btn:hover {
+  transform: translateY(-2px);
+  background-color: rgba(0, 113, 179, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cs_tab_btn.active {
+  background-color: var(--cs-primary);
+  color: var(--cs-white);
+  border-color: transparent;
+  box-shadow: 0 5px 15px rgba(0, 113, 179, 0.4);
+}
+
+/* Plan Features - Ensure visibility and icon */
+.cs_plan_features {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 25px;
+  text-align: left;
+}
+
+.cs_plan_features li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  color: var(--cs-body);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.cs_plan_features li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--cs-primary);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 14px;
+}
+
+/* Footer Info List with Icons */
+.cs_footer_info_list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.cs_footer_info_list li i {
+  color: var(--cs-primary);
+  font-size: 16px;
+  min-width: 18px;
+  margin-top: 3px;
+}
+
+.cs_footer_info_list li span,
+.cs_footer_info_list li a {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.cs_footer_info_list li a:hover {
+  color: var(--cs-primary);
+}
